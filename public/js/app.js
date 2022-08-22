@@ -19740,17 +19740,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-_inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({
-  // The delay after which the progress bar will
-  // appear during navigation, in milliseconds.
-  delay: 0,
-  // The color of the progress bar.
-  color: '#FF0000',
-  // Whether to include the default NProgress styles.
-  includeCSS: true,
-  // Whether the NProgress spinner will be shown.
-  showSpinner: true
-});
 (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.createInertiaApp)({
   resolve: function resolve(name) {
     return __webpack_require__("./resources/js/Pages sync recursive ^\\.\\/.*$")("./".concat(name));
@@ -19766,6 +19755,11 @@ _inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({
       }
     }).use(plugin).mount(el);
   }
+});
+_inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({
+  delay: 250,
+  color: '#FF0000',
+  showSpinner: true
 });
 
 /***/ }),
