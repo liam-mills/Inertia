@@ -10,16 +10,14 @@
             <li>
                 <NavLink href="/settings" :active="$page.component === 'Settings'">Settings</NavLink>
             </li>
-            <li><Link href="/logout" method="post" as="button" class="text-blue-500 hover:underline">Log Out</Link></li>
         </ul>
     </nav>
 </template>
 
 <script>
-import { Link } from '@inertiajs/inertia-vue3';
 import NavLink from '../Shared/NavLink';
 
 export default {
-    components: { Link, NavLink }
+    components: {  NavLink }
 };
 </script>
