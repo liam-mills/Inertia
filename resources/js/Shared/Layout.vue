@@ -3,7 +3,7 @@
         <div class="flex justify-between items-center max-w-6xl mx-auto">
             <div class="flex items-center">
                 <h1 class="font-bold text-lg">Inertia</h1>
-                <p class="ml-6" v-if="username">{{ username }}</p>
+                <p class="ml-6">{{ username }}</p>
             </div>
             <Nav />
         </div>
@@ -21,8 +21,10 @@ import Nav from './Nav';
 export default {
     components: { Nav },
 
-    props: {
-        username: String
+    computed: {
+        username() {
+            return this.$page.props.auth.user.username;
+        }
     }
 };
 </script>
