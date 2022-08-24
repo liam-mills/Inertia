@@ -1,7 +1,10 @@
 <template>
     <header class="bg-gray-100 p-8">
         <div class="flex justify-between items-center max-w-6xl mx-auto">
-            <h1 class="font-bold text-lg">Inertia</h1>
+            <div class="flex items-center">
+                <h1 class="font-bold text-lg">Inertia</h1>
+                <p class="ml-6" v-if="username">{{ username }}</p>
+            </div>
             <Nav />
         </div>
     </header>
@@ -16,6 +19,10 @@
 import Nav from './Nav';
 
 export default {
-    components: { Nav }
+    components: { Nav },
+
+    props: {
+        username: String
+    }
 };
 </script>
