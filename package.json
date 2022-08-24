@@ -3,8 +3,8 @@
     "scripts": {
         "start": "php artisan serve",
         "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch"
+        "development": "npx mix",
+        "watch": "npx mix watch"
     },
     "devDependencies": {
         "@vue/compiler-sfc": "^3.2.37",
