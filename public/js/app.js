@@ -19857,7 +19857,7 @@ __webpack_require__.r(__webpack_exports__);
   resolve: function resolve(name) {
     var page = __webpack_require__("./resources/js/Pages sync recursive ^\\.\\/.*$")("./".concat(name))["default"];
 
-    page.layout = _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"];
+    if (!page.layout) page.layout = _Shared_Layout__WEBPACK_IMPORTED_MODULE_3__["default"];
     return page;
   },
   setup: function setup(_ref) {
