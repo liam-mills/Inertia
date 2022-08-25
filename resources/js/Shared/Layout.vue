@@ -1,4 +1,8 @@
 <template>
+    <Head>
+        <title>Inertia App</title>
+        <meta name="description" content="My Inertia App" head-key="description">
+    </Head>
     <header class="bg-gray-100 p-8">
         <div class="flex justify-between items-center max-w-6xl mx-auto">
             <div class="flex items-center">
