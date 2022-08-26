@@ -7,10 +7,10 @@
 
 
     <div class="mt-6 align-middle inline-block min-w-full">
-        <div class="shadow overflow-hidden border border-gray-200 sm:rounded-lg">
+        <div class="overflow-hidden border border-gray-200 sm:rounded-lg">
             <table class="min-w-full">
                 <tbody class="divide-y divide-solid divide-gray-200">
-                    <tr v-for="user in users" :key="user.id">
+                    <tr v-for="user in users.data" :key="user.id">
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="flex items-center">
                                 <p class="text-sm font-medium text-gray-900">
@@ -19,7 +19,7 @@
                             </div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <Link :href="`/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">Edit</Link>
+                            <Link :href="`/users/${user.id}/edit`" class="text-blue-600 hover:text-blue-900">Edit</Link>
                         </td>
                     </tr>
                 </tbody>
@@ -27,9 +27,21 @@
         </div>
     </div>
 
+    <div class="mt-6 text-right">
+        <Component 
+            :is="link.url ? 'Link' : 'span'"
+            v-for="link in users.links" 
+            v-html="link.label"
+            :href="link.url" 
+            :key="link.label"
+            class="p-1 font-medium inline-flex w-6 h-6 items-center justify-center"
+            :class="link.url ? 'text-blue-600 hover:text-blue-900' : 'text-gray-300'"
+        >
+        </Component>
+    </div>
 
 </template>
 
 <script setup>
-defineProps({ users: Array })
+defineProps({ users: Object })
 </script>
