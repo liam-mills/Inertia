@@ -7,9 +7,9 @@
 
 
     <div class="mt-6 align-middle inline-block min-w-full">
-        <div class="shadow-lg overflow-hidden border-b border-gray-200 sm:rounded-lg">
-            <table class="min-w-full divide-y divide-gray-200">
-                <tbody>
+        <div class="shadow overflow-hidden border border-gray-200 sm:rounded-lg">
+            <table class="min-w-full">
+                <tbody class="divide-y divide-solid divide-gray-200">
                     <tr v-for="user in users" :key="user.id">
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="flex items-center">
@@ -19,7 +19,7 @@
                             </div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <button class="text-indigo-600 hover:text-indigo-900">Edit</button>
+                            <Link :href="`/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">Edit</Link>
                         </td>
                     </tr>
                 </tbody>
