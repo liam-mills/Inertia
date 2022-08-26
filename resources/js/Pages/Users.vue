@@ -3,8 +3,12 @@
         <title>Users</title>
         <meta name="description" content="My Inertia App's users page" head-key="description">
     </Head>
-    <h1 class="text-4xl font-bold">Users</h1>
 
+    <div class="flex justify-between">
+        <h1 class="text-4xl font-bold">Users</h1>
+
+        <Pagination :links="users.links" />
+    </div>
 
     <div class="mt-6 align-middle inline-block min-w-full">
         <div class="overflow-hidden border border-gray-200 sm:rounded-lg">
@@ -27,21 +31,11 @@
         </div>
     </div>
 
-    <div class="mt-6 text-right">
-        <Component 
-            :is="link.url ? 'Link' : 'span'"
-            v-for="link in users.links" 
-            v-html="link.label"
-            :href="link.url" 
-            :key="link.label"
-            class="p-1 font-medium inline-flex w-6 h-6 items-center justify-center"
-            :class="link.url ? 'text-blue-600 hover:text-blue-900' : 'text-gray-300'"
-        >
-        </Component>
-    </div>
+    <Pagination :links="users.links" class="mt-6 text-right" />
 
 </template>
 
 <script setup>
+import Pagination from '../Shared/Pagination';
 defineProps({ users: Object })
 </script>
