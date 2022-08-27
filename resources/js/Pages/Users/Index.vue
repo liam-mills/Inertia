@@ -44,7 +44,7 @@
     </div>
     <p v-else>No results found for {{ props.filters.search }}.</p>
 
-    <Pagination :links="users.links" class="mt-6 text-right" v-if="users.data.length" />
+    <Pagination :links="users.links" class="mt-6 text-right" v-if="users.total > users.data.length" />
 
 </template>
 
@@ -59,9 +59,6 @@ let props = defineProps({
 });
 
 let search = ref(props.filters.search);
-
-console.clear();
-console.log(Inertia);
 
 watch(search, value => {
     Inertia.get(

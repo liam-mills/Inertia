@@ -28,8 +28,6 @@ __webpack_require__.r(__webpack_exports__);
     expose();
     var props = __props;
     var search = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(props.filters.search);
-    console.clear();
-    console.log(_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia);
     (0,vue__WEBPACK_IMPORTED_MODULE_1__.watch)(search, function (value) {
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get('/users', {
         search: value
@@ -206,7 +204,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))])])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_17, "No results found for " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.props.filters.search) + ".", 1
   /* TEXT */
-  )), $props.users.data.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Pagination"], {
+  )), $props.users.total > $props.users.data.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Pagination"], {
     key: 2,
     links: $props.users.links,
     "class": "mt-6 text-right"

@@ -26,7 +26,7 @@ Route::get('/users', function () {
             ->when(Request::input('search'), function ($query, $search) {
                 $query->where('name', 'like', "%{$search}%");
             })
-            ->paginate(20)
+            ->paginate(10)
             ->withQueryString(),
         
         'filters' => Request::only(['search'])
