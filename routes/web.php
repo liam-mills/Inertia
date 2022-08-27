@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-    return Inertia::render('Users', [
+    return Inertia::render('Users/Index', [
         'users' => User::query()
             ->select(['name', 'id'])
             ->when(Request::input('search'), function ($query, $search) {
@@ -31,6 +31,23 @@ Route::get('/users', function () {
         
         'filters' => Request::only(['search'])
     ]);
+});
+
+Route::get('/users/create', function () {
+    return Inertia::render('Users/Create');
+});
+
+// Create users form submit.
+Route::post('/users', function () {
+    $data = Request::validate([
+        'name' => 'required',
+        'email' => ['required', 'email'],
+        'password' => 'required',
+    ]);
+
+    User::create($data);
+
+    return redirect('/users');
 });
 
 Route::get('/settings', function () {

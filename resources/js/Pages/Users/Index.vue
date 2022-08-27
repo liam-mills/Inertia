@@ -1,24 +1,28 @@
 <template>
-    <Head>
-        <title>Users</title>
-        <meta name="description" content="My Inertia App's users page" head-key="description">
-    </Head>
+    <Head title="Users" />
 
     <div class="flex justify-between mb-6">
-        <h1 class="text-4xl font-bold">Users</h1>
+        <div class="flex items-end space-x-3">
+            <h1 class="text-4xl font-bold">Users</h1>
+            <p v-if="users.data.length" class="text-2xl text-gray-400">{{ users.total }}</p>
+        </div>
 
-        <input 
-            type="search"
-            class="py-2 px-3 whitespace-nowrap border border-gray-200 sm:rounded-lg"
-            placeholder="Search"
-            name="search"
-            id="search"
-            v-model="search"
-        />
+        <div class="flex items-end space-x-6">
+            <Link href="/users/create" class="bg-blue-600 hover:bg-blue-900 px-4 py-2 font-bold text-white">Create</Link>
+            <input 
+                type="search"
+                class="py-2 px-3 whitespace-nowrap border border-gray-200"
+                placeholder="Search"
+                name="search"
+                id="search"
+                v-model="search"
+            />
+        </div>
+
     </div>
 
     <div v-if="users.data.length" class="align-middle inline-block min-w-full">
-        <div class="overflow-hidden border border-gray-200 sm:rounded-lg">
+        <div class="overflow-hidden border border-gray-200">
             <table class="min-w-full">
                 <tbody class="divide-y divide-solid divide-gray-200">
                     <tr v-for="user in users.data" :key="user.id">
@@ -44,7 +48,7 @@
 </template>
 
 <script setup>
-import Pagination from '../Shared/Pagination';
+import Pagination from '../../Shared/Pagination';
 import { ref, watch } from 'vue';
 import { Inertia } from '@inertiajs/inertia';
 
