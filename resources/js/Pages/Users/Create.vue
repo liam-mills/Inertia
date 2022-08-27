@@ -1,7 +1,7 @@
 <template>
-    <Head title="Create User" />
+    <Head title="Create New User" />
 
-    <h1 class="text-4xl font-bold mb-6">Create User</h1>
+    <h1 class="text-4xl font-bold mb-6">Create New User</h1>
 
     <form @submit.prevent="submit" class="space-y-6 max-w-md mx-auto">
         <div>

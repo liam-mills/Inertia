@@ -107,7 +107,7 @@ var _hoisted_5 = {
   "class": "flex items-end space-x-6"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Create");
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Create New User");
 
 var _hoisted_7 = {
   key: 0,

@@ -8,7 +8,7 @@
         </div>
 
         <div class="flex items-end space-x-6">
-            <Link href="/users/create" class="bg-blue-600 hover:bg-blue-900 px-4 py-2 font-bold text-white">Create</Link>
+            <Link href="/users/create" class="bg-blue-600 hover:bg-blue-900 px-4 py-2 font-bold text-white">Create New User</Link>
             <input 
                 type="search"
                 class="py-2 px-3 whitespace-nowrap border border-gray-200"
