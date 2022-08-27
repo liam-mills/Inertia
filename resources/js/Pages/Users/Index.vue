@@ -27,11 +27,9 @@
                 <tbody class="divide-y divide-solid divide-gray-200">
                     <tr v-for="user in users.data" :key="user.id">
                         <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center">
-                                <p class="text-sm font-medium text-gray-900">
-                                    {{ user.name }}
-                                </p>
-                            </div>
+                            <p class="text-sm font-medium text-gray-900">
+                                {{ user.name }}
+                            </p>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-4">
                             <Link :href="`/users/${user.id}/edit`" class="text-blue-600 hover:text-blue-900">Edit</Link>
