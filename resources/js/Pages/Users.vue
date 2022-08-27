@@ -4,11 +4,11 @@
         <meta name="description" content="My Inertia App's users page" head-key="description">
     </Head>
 
-    <div class="flex justify-between">
+    <div class="flex justify-between mb-6">
         <h1 class="text-4xl font-bold">Users</h1>
 
         <input 
-            type="text"
+            type="search"
             class="py-2 px-3 whitespace-nowrap border border-gray-200 sm:rounded-lg"
             placeholder="Search"
             name="search"
@@ -17,7 +17,7 @@
         />
     </div>
 
-    <div class="mt-6 align-middle inline-block min-w-full">
+    <div v-if="users.data.length" class="align-middle inline-block min-w-full">
         <div class="overflow-hidden border border-gray-200 sm:rounded-lg">
             <table class="min-w-full">
                 <tbody class="divide-y divide-solid divide-gray-200">
@@ -37,8 +37,9 @@
             </table>
         </div>
     </div>
+    <p v-else>No results found for {{ props.filters.search }}.</p>
 
-    <Pagination :links="users.links" class="mt-6 text-right" />
+    <Pagination :links="users.links" class="mt-6 text-right" v-if="users.data.length" />
 
 </template>
 
