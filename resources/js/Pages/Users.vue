@@ -47,9 +47,12 @@ import Pagination from '../Shared/Pagination';
 import { ref, watch } from 'vue';
 import { Inertia } from '@inertiajs/inertia';
 
-defineProps({ users: Object });
+let props = defineProps({ 
+    users: Object,
+    filters: Object
+});
 
-let search = ref('');
+let search = ref(props.filters.search);
 
 console.clear();
 console.log(Inertia);
@@ -58,7 +61,10 @@ watch(search, value => {
     Inertia.get(
         '/users', 
         { search: value },
-        { preserveState: true }
+        { 
+            preserveState: true,
+            replace: true
+        }
     );
 });
 </script>
