@@ -7,7 +7,14 @@
     <div class="flex justify-between">
         <h1 class="text-4xl font-bold">Users</h1>
 
-        <Pagination :links="users.links" />
+        <input 
+            type="text"
+            class="py-2 px-3 whitespace-nowrap border border-gray-200 sm:rounded-lg"
+            placeholder="Search"
+            name="search"
+            id="search"
+            v-model="search"
+        />
     </div>
 
     <div class="mt-6 align-middle inline-block min-w-full">
@@ -37,5 +44,21 @@
 
 <script setup>
 import Pagination from '../Shared/Pagination';
-defineProps({ users: Object })
+import { ref, watch } from 'vue';
+import { Inertia } from '@inertiajs/inertia';
+
+defineProps({ users: Object });
+
+let search = ref('');
+
+console.clear();
+console.log(Inertia);
+
+watch(search, value => {
+    Inertia.get(
+        '/users', 
+        { search: value },
+        { preserveState: true }
+    );
+});
 </script>
