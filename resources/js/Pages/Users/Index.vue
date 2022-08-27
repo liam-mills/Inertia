@@ -33,8 +33,9 @@
                                 </p>
                             </div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-4">
                             <Link :href="`/users/${user.id}/edit`" class="text-blue-600 hover:text-blue-900">Edit</Link>
+                            <Link :href="`/users/${user.id}/delete`" class="text-red-600 hover:text-red-900">Delete</Link>
                         </td>
                     </tr>
                 </tbody>

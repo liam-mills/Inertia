@@ -132,12 +132,14 @@ var _hoisted_13 = {
   "class": "text-sm font-medium text-gray-900"
 };
 var _hoisted_14 = {
-  "class": "px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+  "class": "px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-4"
 };
 
 var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
 
-var _hoisted_16 = {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Delete");
+
+var _hoisted_17 = {
   key: 1
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -187,10 +189,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
     }, 1032
     /* PROPS, DYNAMIC_SLOTS */
+    , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+      href: "/users/".concat(user.id, "/delete"),
+      "class": "text-red-600 hover:text-red-900"
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [_hoisted_16];
+      }),
+      _: 2
+      /* DYNAMIC */
+
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
     , ["href"])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_16, "No results found for " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.props.filters.search) + ".", 1
+  ))])])])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_17, "No results found for " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.props.filters.search) + ".", 1
   /* TEXT */
   )), $props.users.data.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Pagination"], {
     key: 2,
