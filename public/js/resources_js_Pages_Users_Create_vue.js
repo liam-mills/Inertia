@@ -28,15 +28,25 @@ __webpack_require__.r(__webpack_exports__);
       email: '',
       password: ''
     });
+    var processing = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
 
     var submit = function submit() {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.post('/users', form);
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.post('/users', form, {
+        onStart: function onStart() {
+          processing.value = true;
+        },
+        onFinish: function onFinish() {
+          processing.value = false;
+        }
+      });
     };
 
     var __returned__ = {
       form: form,
+      processing: processing,
       submit: submit,
       reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
@@ -113,18 +123,16 @@ var _hoisted_10 = {
   key: 0,
   "class": "text-xs font-bold text-red-600"
 };
-
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_11 = {
   "class": "text-right"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "submit",
-  "class": "bg-blue-600 hover:bg-blue-900 px-4 py-2 font-bold text-white"
-}, "Create")], -1
-/* HOISTED */
-);
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Create");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
+
+  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
     title: "Create New User"
@@ -178,7 +186,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     required: ""
   }, null, 2
   /* CLASS */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.password]])]), _hoisted_11], 32
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.password]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    type: "submit",
+    as: "button",
+    "class": "bg-blue-600 hover:bg-blue-900 px-4 py-2 font-bold text-white disabled:bg-gray-600",
+    disabled: $setup.processing,
+    "preserve-scroll": ""
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_12];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["disabled"])])], 32
   /* HYDRATE_EVENTS */
   )], 64
   /* STABLE_FRAGMENT */

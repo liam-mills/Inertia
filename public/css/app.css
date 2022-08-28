@@ -10,3 +10,7 @@
 .pagination-link:last-child {
     padding-right: 0;
 }
+
+button:disabled {
+    background: rgba(75,85,99,var(--tw-text-opacity));
+}

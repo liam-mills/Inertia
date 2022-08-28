@@ -26,13 +26,13 @@
             <input v-model="form.password" type="password" password="password" id="password" class="border border-gray-200 p-2 w-full" :class="{ 'border-red-600': errors.password }" required>
         </div>
         <div class="text-right">
-            <button type="submit" class="bg-blue-600 hover:bg-blue-900 px-4 py-2 font-bold text-white">Create</button>
+            <Link type="submit" as="button" class="bg-blue-600 hover:bg-blue-900 px-4 py-2 font-bold text-white disabled:bg-gray-600" :disabled="processing" preserve-scroll>Create</Link>
         </div>
     </form>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { Inertia } from '@inertiajs/inertia'
 
 defineProps({
@@ -45,7 +45,12 @@ let form = reactive({
     password: '',
 })
 
+let processing = ref(false)
+
 let submit = () => {
-    Inertia.post('/users', form);
+    Inertia.post('/users', form, {
+        onStart: () => { processing.value = true },
+        onFinish: () => { processing.value = false }
+    });
 }
 </script>
