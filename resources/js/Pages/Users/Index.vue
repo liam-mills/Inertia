@@ -43,7 +43,7 @@
     <p v-else-if="props.filters.search">No results found for {{ props.filters.search }}.</p>
     <p v-else>No results found.</p>
 
-    <Pagination :links="users.links" class="mt-6 text-right" v-if="users.total > users.data.length" />
+    <Pagination :links="users.links" class="mt-6" v-if="users.total > users.data.length" />
 
 </template>
 

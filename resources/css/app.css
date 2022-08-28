@@ -1,0 +1,12 @@
+.pagination-link:first-child, .pagination-link:last-child {
+    width: initial;
+    padding: 0.25rem 0.5rem;
+}
+
+.pagination-link:first-child {
+    padding-left: 0;
+}
+
+.pagination-link:last-child {
+    padding-right: 0;
+}
