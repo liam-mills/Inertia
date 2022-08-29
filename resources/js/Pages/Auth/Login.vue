@@ -2,19 +2,19 @@
     <Head title="Login" />
 
     <main class="p-8 bg-gray-100 min-h-screen flex flex-col justify-center items-center">
-        <form @submit.prevent="submit" class="p-6 space-y-6 max-w-md mx-auto bg-white border border-gray-200">
+        <form @submit.prevent="submit" class="p-6 space-y-6 max-w-md mx-auto bg-white border border-gray-200" style="min-width: 500px;">
             <h1 class="text-4xl font-bold text-center">Login</h1>
             <div>
                 <div class="flex justify-between">
                     <label for="email" class="block pb-2 font-bold text-xs text-gray-600">Email Address</label>
-                    <p v-if="form.errors.email" class="text-xs font-bold text-red-600">{{ form.errors.email }}</p>
+                    <p v-if="form.errors.email" class="ml-6 text-xs font-bold text-red-600">{{ form.errors.email }}</p>
                 </div>
                 <input v-model="form.email" type="email" email="email" id="email" class="border border-gray-200 p-2 w-full" :class="{ 'border-red-600': form.errors.email }" required>
             </div>
             <div>
                 <div class="flex justify-between">
                     <label for="password" class="block pb-2 font-bold text-xs text-gray-600">Password</label>
-                    <p v-if="form.errors.password" class="text-xs font-bold text-red-600">{{ form.errors.password }}</p>
+                    <p v-if="form.errors.password" class="ml-6 text-xs font-bold text-red-600">{{ form.errors.password }}</p>
                 </div>
                 <input v-model="form.password" type="password" password="password" id="password" class="border border-gray-200 p-2 w-full" :class="{ 'border-red-600': form.errors.password }" required>
             </div>

@@ -16,7 +16,9 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('login', [LoginController::class, 'create'])->name('login');
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth');
 
 Route::middleware('auth')->group(function () {
 
