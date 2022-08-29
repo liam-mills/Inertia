@@ -26,14 +26,16 @@
             <table class="min-w-full">
                 <tbody class="divide-y divide-solid divide-gray-200">
                     <tr v-for="user in users.data" :key="user.id">
-                        <td class="px-6 py-4 whitespace-nowrap">
+                        <td class="p-4 whitespace-nowrap">
                             <p class="text-sm font-medium text-gray-900">
                                 {{ user.name }}
                             </p>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-4">
-                            <Link :href="`/users/${user.id}/edit`" class="text-blue-600 hover:text-blue-900">Edit</Link>
-                            <Link :href="`/users/${user.id}/delete`" class="text-red-600 hover:text-red-900">Delete</Link>
+                        <td class="p-4 whitespace-nowrap text-right text-sm font-medium space-x-4 w-14">
+                            <Link v-if="user.can.edit" :href="`/users/${user.id}/edit`" class="text-blue-600 hover:text-blue-900">Edit</Link>
+                        </td>
+                        <td class="p-4 whitespace-nowrap text-right text-sm font-medium space-x-4 w-14">
+                            <Link v-if="user.can.delete" :href="`/users/${user.id}/delete`" class="text-red-600 hover:text-red-900">Delete</Link>
                         </td>
                     </tr>
                 </tbody>

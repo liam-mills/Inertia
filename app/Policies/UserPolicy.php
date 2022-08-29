@@ -52,7 +52,7 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        //
+        return (bool) mt_rand(0, 1);
     }
 
     /**
@@ -64,7 +64,7 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        //
+        return (bool) mt_rand(0, 1);
     }
 
     /**
