@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -36,13 +37,17 @@ Route::middleware('auth')->group(function () {
                 ->paginate(10)
                 ->withQueryString(),
             
-            'filters' => Request::only(['search'])
+            'filters' => Request::only(['search']),
+
+            'can' => [
+                'createUser' => Auth::user()->can('create', User::class)
+            ]
         ]);
     });
     
     Route::get('/users/create', function () {
         return Inertia::render('Users/Create');
-    });
+    })->middleware('can:create,App\Models\User');
     
     // Create users form submit.
     Route::post('/users', function () {

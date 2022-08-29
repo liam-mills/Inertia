@@ -8,7 +8,7 @@
         </div>
 
         <div class="flex items-end space-x-6">
-            <Link href="/users/create" class="bg-blue-600 hover:bg-blue-900 px-4 py-2 font-bold text-white">Create New User</Link>
+            <Link v-if="can.createUser" href="/users/create" class="bg-blue-600 hover:bg-blue-900 px-4 py-2 font-bold text-white">Create New User</Link>
             <input 
                 type="search"
                 class="py-2 px-3 whitespace-nowrap border border-gray-200"
@@ -55,7 +55,8 @@ import throttle from 'lodash/throttle';
 
 let props = defineProps({ 
     users: Object,
-    filters: Object
+    filters: Object,
+    can: Object
 });
 
 let search = ref(props.filters.search);
